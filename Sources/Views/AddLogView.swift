@@ -17,7 +17,7 @@ public struct AddLogView: View {
     public init() {}
     
     private var duration: TimeInterval {
-        endTime.timeIntervalSince(startTime)
+        max(0, endTime.timeIntervalSince(startTime))
     }
     
     public var body: some View {

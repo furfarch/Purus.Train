@@ -68,7 +68,7 @@ public class HealthKitManager: ObservableObject {
             totalDistance: nil,
             metadata: [
                 "exerciseName": exercise.name,
-                "sets": log.sets.count,
+                "sets": log.sets.count as NSNumber,
                 "notes": log.notes
             ]
         )

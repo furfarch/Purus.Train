@@ -1,6 +1,6 @@
 # purus.TRAIN
 
-Part of the purus Series - Minimalist apps focused on one training.
+Part of the purus Series - Minimalist apps focused on training.
 
 A SwiftUI-based iOS application for managing training exercises, programs, and workout logs with iCloud synchronization and HealthKit integration.
 

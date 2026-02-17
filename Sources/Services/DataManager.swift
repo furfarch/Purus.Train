@@ -13,6 +13,9 @@ public class DataManager: ObservableObject {
     public static let shared = DataManager()
     
     private init() {
+        // IMPORTANT: Update this CloudKit container identifier to match your bundle ID
+        // Format: iCloud.<your-bundle-identifier>
+        // Example: If your bundle ID is "com.example.app", use "iCloud.com.example.app"
         self.container = CKContainer(identifier: "iCloud.com.furfarch.purus.TRAIN")
         self.database = container.privateCloudDatabase
         loadLocalData()
