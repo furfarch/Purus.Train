@@ -235,4 +235,82 @@ public class DataManager: ObservableObject {
             // Process results
         }
     }
+    
+    // MARK: - Sample Data (for testing)
+    
+    public func loadSampleData() {
+        // Sample exercises
+        let benchPress = Exercise(
+            name: "Barbell Bench Press",
+            description: "Compound chest exercise performed lying on a bench",
+            muscleGroups: ["Chest", "Shoulders", "Triceps"],
+            category: .strength
+        )
+        
+        let squats = Exercise(
+            name: "Squats",
+            description: "Fundamental lower body compound movement",
+            muscleGroups: ["Quadriceps", "Glutes", "Hamstrings"],
+            category: .strength
+        )
+        
+        let running = Exercise(
+            name: "Running",
+            description: "Cardiovascular endurance training",
+            muscleGroups: ["Full Body"],
+            category: .cardio
+        )
+        
+        let pullups = Exercise(
+            name: "Pull-ups",
+            description: "Upper body pulling exercise",
+            muscleGroups: ["Back", "Biceps"],
+            category: .strength
+        )
+        
+        let yoga = Exercise(
+            name: "Yoga Flow",
+            description: "Full body stretching and flexibility routine",
+            muscleGroups: ["Full Body"],
+            category: .flexibility
+        )
+        
+        // Add exercises
+        addExercise(benchPress)
+        addExercise(squats)
+        addExercise(running)
+        addExercise(pullups)
+        addExercise(yoga)
+        
+        // Sample program
+        let program = TrainingProgram(
+            name: "Full Body Strength Program",
+            description: "A comprehensive 3-day full body strength training program",
+            exercises: [
+                ProgramExercise(exerciseId: squats.id, sets: 4, reps: 8, restSeconds: 90, notes: "Focus on depth and form"),
+                ProgramExercise(exerciseId: benchPress.id, sets: 3, reps: 10, restSeconds: 60, notes: "Lower weight to bar at chest level"),
+                ProgramExercise(exerciseId: pullups.id, sets: 3, reps: 12, restSeconds: 60, notes: "Use assistance if needed")
+            ],
+            schedule: ["Monday", "Wednesday", "Friday"]
+        )
+        
+        addTrainingProgram(program)
+        
+        // Sample log
+        let log = TrainingLog(
+            date: Date(),
+            exerciseId: squats.id,
+            programId: program.id,
+            sets: [
+                ExerciseSet(reps: 8, weight: 100.0, completed: true),
+                ExerciseSet(reps: 8, weight: 100.0, completed: true),
+                ExerciseSet(reps: 7, weight: 100.0, completed: true),
+                ExerciseSet(reps: 6, weight: 100.0, completed: true)
+            ],
+            duration: 1800,
+            notes: "Felt strong today, might increase weight next session"
+        )
+        
+        addTrainingLog(log)
+    }
 }
